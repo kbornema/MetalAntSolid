@@ -4,6 +4,7 @@ using UnityEngine;
 public class AntBodyPart : MonoBehaviour
 {
     public enum EBodyType { None, Main, Armor, Eye, Weapon }
+    public enum ELimb { Head, Sensors, LegsFront, LegsCenter, LegsBack, BodyFront, BodyCenter, BodyEnd }
 
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
@@ -11,7 +12,8 @@ public class AntBodyPart : MonoBehaviour
 
     public EBodyType BodyType = EBodyType.Main;
 
-    public int _armorLevel = 0;
+    public int ArmorLevel = 0;
+    public ELimb Limb;
 
     private void Reset()
     {
