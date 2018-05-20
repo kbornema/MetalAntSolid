@@ -18,6 +18,27 @@ public class AntVisual : MonoBehaviour
     private float _movePercent = 0.0f;
     private float _lastMovePercent = -1.0f;
 
+    [SerializeField]
+    private int _armorLevel = 0;
+
+    private void Start()
+    {
+        EnableArmorLevel(_armorLevel);
+    }
+
+    public void EnableArmorLevel(int level)
+    {
+        for (int i = 0; i < _bodyParts.Length; i++)
+        {
+            if (_bodyParts[i]._armorLevel <= level)
+                _bodyParts[i].gameObject.SetActive(true);
+            else
+                _bodyParts[i].gameObject.SetActive(false);
+        }
+
+        _armorLevel = level;
+    }
+
     private void OnValidate()
     {
         Colorize();

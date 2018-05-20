@@ -29,15 +29,15 @@ public class ShadowSprite : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(_basedOn && !_shadowSprite)
+        if (_basedOn && !_shadowSprite)
             Create();
 
-        if(_shadowSprite)
+        if (_shadowSprite)
         {
             var shadowT = _shadowSprite.transform;
 
             if (!Application.isPlaying || (_lastPos - shadowT.position).sqrMagnitude > POS_DIFF)
-            {   
+            {
                 _lastPos = _shadowSprite.transform.position;
 
                 shadowT.localPosition = shadowT.InverseTransformDirection(_shadowDirection);
@@ -48,7 +48,7 @@ public class ShadowSprite : MonoBehaviour
                 if (_shadowSprite.sprite != _basedOn.sprite)
                     _shadowSprite.sprite = _basedOn.sprite;
 
-                if(_shadowSprite.color != _shadowColor)
+                if (_shadowSprite.color != _shadowColor)
                     _shadowSprite.color = _shadowColor;
             }
         }
@@ -61,5 +61,13 @@ public class ShadowSprite : MonoBehaviour
         _shadowSprite.sortingLayerName = _basedOn.sortingLayerName;
         _shadowSprite.transform.localScale = _localScale;
         _shadowSprite.transform.localRotation = Quaternion.identity;
+
+#if UNITY_EDITOR
+        if (Application.isEditor && !Application.isPlaying)
+        {
+            UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(gameObject);
+            UnityEditor.EditorUtility.SetDirty(gameObject);
+        }
+#endif
     }
 }

@@ -11,6 +11,8 @@ public class AntBodyPart : MonoBehaviour
 
     public EBodyType BodyType = EBodyType.Main;
 
+    public int _armorLevel = 0;
+
     private void Reset()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
