@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212494470398579706}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114030439177396904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1846,6 +1847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212302425439244506}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114031031531238994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1859,6 +1861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212649253436368572}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114032563183560088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1951,6 +1954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212575889924945618}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114092344447659076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1998,6 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212754151281031424}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114148166025544998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2011,6 +2016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212497825228406512}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114162512055812772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2024,6 +2030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212790975612595990}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114194471907324098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2092,6 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212219038422821256}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114216261953599610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2137,6 +2145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212068814619528432}
   BodyType: 3
+  _armorLevel: 0
 --- !u!114 &114265172836256278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2150,6 +2159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212130988095264550}
   BodyType: 4
+  _armorLevel: 0
 --- !u!114 &114276745988819178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2163,6 +2173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212218534463817676}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114281815536575440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2306,6 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212377183149670808}
   BodyType: 3
+  _armorLevel: 0
 --- !u!114 &114360843407433718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2330,6 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212326929518754644}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114394812687090428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2343,6 +2356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212496896018023662}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114415079725760232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2356,6 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212328401975464816}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114457135696615042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2369,6 +2384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212834786872836158}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114457344654436010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2400,6 +2416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212638345834447364}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114475959560195544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2413,6 +2430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212952063294774024}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114517387157164372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2426,6 +2444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212418697416428138}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114529056804963192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2439,6 +2458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212948692892692198}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114529634483553458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2587,6 +2607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212118517894103936}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114683525147684432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2654,6 +2675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212815425426570856}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114688716206515402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2706,6 +2728,7 @@ MonoBehaviour:
   _colorSetting: {fileID: 11400000, guid: bbdc65c9d40e4664ea747c76b38e9c9b, type: 2}
   _animator: {fileID: 95206118909039888}
   _movePercent: 0
+  _armorLevel: 0
 --- !u!114 &114702938688476514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2719,6 +2742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212719456296841016}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114715248530274472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2767,6 +2791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212462160415330108}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114803487509753556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2780,6 +2805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212418818847827196}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114819847048459496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2793,6 +2819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212794863552883500}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114841598499355428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2817,6 +2844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212848065481874936}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114888047673643450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2830,6 +2858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212577980415894436}
   BodyType: 0
+  _armorLevel: 0
 --- !u!114 &114892670775499998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2843,6 +2872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212862175872766770}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114904605220562178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2880,6 +2910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212806640646232182}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114935495259773256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2893,6 +2924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212957608171472270}
   BodyType: 0
+  _armorLevel: 0
 --- !u!114 &114939210588346470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2906,6 +2938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212933751099038798}
   BodyType: 2
+  _armorLevel: 0
 --- !u!114 &114939334191528384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2919,6 +2952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212859289727478624}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114945265877290020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2932,6 +2966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212205876252821640}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114983989741154174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2945,6 +2980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212236029266731704}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114991343767923882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2958,6 +2994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212107920114405912}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114999549967426292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2971,6 +3008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 212075564008399692}
   BodyType: 1
+  _armorLevel: 0
 --- !u!114 &114999919880016042
 MonoBehaviour:
   m_ObjectHideFlags: 1
