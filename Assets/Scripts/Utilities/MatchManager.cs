@@ -95,6 +95,18 @@ public class MatchManager : MonoBehaviour  {
             InvokeResourceEvent(playertyp, _resourcesDic[playertyp]);
     }
 
+    public void ResetPlayer(GameObject player)
+    {
+        // Reset Player Position
+        player.transform.position = Vector3.zero;
+        player.transform.rotation = Quaternion.identity;
+
+        // Reset PlayerScripts
+        player.GetComponent<Health>().ResetHP();
+        player.GetComponent<Hero_Movement>().antVisual.SetMovePercent(0);
+        player.GetComponentInChildren<Hero_Wpn_Controller>().switchToWeapon(playerPrefab.GetComponentInChildren<Hero_Wpn_Controller>().GetComponentInChildren<Hero_Wpn_Info>());
+    }
+
     public void InitPlayer(int PlayerID)
     {
         var instance = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity, null);
@@ -111,6 +123,18 @@ public class MatchManager : MonoBehaviour  {
 
         if (value != 0)
             InvokeVictoryEvent();
+    }
+
+    public IEnumerator DelayedPlayerRespawn(GameObject player)
+    {
+        int playerID = player.GetComponent<Actor>().PlayerID;
+        ResetPlayer(player);
+        player.SetActive(false);
+        player.GetComponent<CamTarget>().ValidTarget = false;
+        yield return new WaitForSeconds(3);
+        Debug.Log("Respawning Player " + playerID);
+        player.SetActive(true);
+        player.GetComponent<CamTarget>().ValidTarget = true;
     }
 
     public enum PlayerTyp
