@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +16,27 @@ public class AntVisual : MonoBehaviour
     [SerializeField, Range(0.0f, 1.0f)]
     private float _movePercent = 0.0f;
     private float _lastMovePercent = -1.0f;
+
+    [SerializeField]
+    private int _armorLevel = 0;
+
+    private void Start()
+    {
+        EnableArmorLevel(_armorLevel);
+    }
+
+    public void EnableArmorLevel(int level)
+    {
+        for (int i = 0; i < _bodyParts.Length; i++)
+        {
+            if (_bodyParts[i].ArmorLevel <= level)
+                _bodyParts[i].gameObject.SetActive(true);
+            else
+                _bodyParts[i].gameObject.SetActive(false);
+        }
+
+        _armorLevel = level;
+    }
 
     private void OnValidate()
     {
@@ -69,10 +89,25 @@ public class AntVisual : MonoBehaviour
         if (!_colorSetting)
             return;
 
+        Dictionary<string, float> _randValues = new Dictionary<string, float>();
+
         foreach (var p in _bodyParts)
         {
+            var key = p.Limb.ToString();
+
+            float rand = 0.0f;
+
+            if (_randValues.ContainsKey(key))
+                rand = _randValues[key];
+            else
+            {
+                rand = Random.value;
+                _randValues.Add(key, rand);
+            }
+
+
             if (p.BodyType == AntBodyPart.EBodyType.Main)
-                p.SetColor(_colorSetting.AntBaseColor);
+                p.SetColor(_colorSetting.GetBaseColor(rand));
 
             else if (p.BodyType == AntBodyPart.EBodyType.Armor)
                 p.SetColor(_colorSetting.AntArmorColor);

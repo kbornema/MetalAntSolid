@@ -10,12 +10,29 @@ public class Health : MonoBehaviour {
     [SerializeField]
     private float maxHP;
 
+    public bool invincible;
+
     HealthBar healthbar = null;
+
+    Hero_Movement heroMovement;
 
     void Start()
     {
         healthbar = GetComponentInChildren<HealthBar>();
+        heroMovement = GetComponent<Hero_Movement>();
+        invincible = false;
     }
+
+#if UNITY_EDITOR
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            invincible = !invincible;
+            Debug.Log("Switching to Godmode");
+        }
+    }
+#endif
 
     public float HP
     {
@@ -32,19 +49,32 @@ public class Health : MonoBehaviour {
         }
     }
 
+    public void ResetHP()
+    {
+        HP = maxHP;
+    }
+
     public void Damage(int damage)
     {
-        HP -= damage;
+        if(invincible == false)
+            HP -= damage;
+
+        if (heroMovement != null && damage > 0)
+        { 
+
+            Debug.Log("Vibrating");
+            heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);
+        }
     }
 
     private void Die()
     {
         if (this.GetComponent<Hero_Movement>() != null)
         {
-            int playerID = gameObject.GetComponent<Actor>().PlayerID;
-            Destroy(gameObject);
+            // Todo fix this;
+            int playerID = this.GetComponent<Actor>().PlayerID;
             Debug.Log("Player " + playerID + " died... Respawning!");
-            MatchManager.Instance().InitPlayer(playerID);
+            MatchManager.Instance().StartCoroutine(MatchManager.Instance().DelayedPlayerRespawn(gameObject));
         }
         else if (gameObject.tag == "Ants")
         {
@@ -52,4 +82,6 @@ public class Health : MonoBehaviour {
             pooledObject.ReturnToPool();
         }
     }
+
+
 }

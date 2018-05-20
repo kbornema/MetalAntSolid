@@ -7,16 +7,19 @@ public class SpawnFollower : MonoBehaviour {
     [SerializeField]
     GameObject followerAnt;
 
+    List<GameObject> currentFollowers;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            SpawnAnt();
+            currentFollowers.Add(SpawnAnt());
     }
 
-    public void SpawnAnt()
+    public GameObject SpawnAnt()
     {
         GameObject newAnt = Instantiate(followerAnt);
         newAnt.transform.position = this.transform.position - (Vector3.down * 5);
         newAnt.GetComponentInChildren<FollowPlayerBehavior>().followTarget = gameObject;
+        return newAnt;
     }
 }
