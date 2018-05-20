@@ -43,7 +43,7 @@ public class RangedAttackBehavior : SteeringAntBehavior {
         Vector2 direction = followTarget.transform.position - transform.position;
         if (direction.magnitude > stopPursuing)
         {
-            Debug.Log("direction.magnitude: " + direction.magnitude + ", " + stopPursuing);
+            // Debug.Log("direction.magnitude: " + direction.magnitude + ", " + stopPursuing);
             gameObject.SetActive(false);
             return new WalkingBehavior(direction.normalized, 0.0f);
         }

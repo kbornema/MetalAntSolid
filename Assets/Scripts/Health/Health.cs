@@ -32,6 +32,11 @@ public class Health : MonoBehaviour {
         }
     }
 
+    public void ResetHP()
+    {
+        HP = maxHP;
+    }
+
     public void Damage(int damage)
     {
         HP -= damage;
@@ -41,10 +46,10 @@ public class Health : MonoBehaviour {
     {
         if (this.GetComponent<Hero_Movement>() != null)
         {
-            int playerID = gameObject.GetComponent<Actor>().PlayerID;
-            Destroy(gameObject);
+            // Todo fix this;
+            int playerID = this.GetComponent<Actor>().PlayerID;
             Debug.Log("Player " + playerID + " died... Respawning!");
-            MatchManager.Instance().InitPlayer(playerID);
+            MatchManager.Instance().StartCoroutine(MatchManager.Instance().DelayedPlayerRespawn(gameObject));
         }
         else if (gameObject.tag == "Ants")
         {
@@ -52,4 +57,6 @@ public class Health : MonoBehaviour {
             pooledObject.ReturnToPool();
         }
     }
+
+
 }
