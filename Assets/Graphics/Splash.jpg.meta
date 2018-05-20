@@ -1,0 +1,347 @@
+fileFormatVersion: 2
+guid: e930a7d1961d5b64ab2ba74ec7c6ba97
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_0
+    21300002: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_1
+    21300004: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_2
+    21300006: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_3
+    21300008: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_4
+    21300010: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_5
+    21300012: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_6
+    21300014: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_7
+    21300016: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_8
+    21300018: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_9
+    21300020: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_10
+    21300022: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_11
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 260
+        width: 117
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e9f75ea04d0044a84a4bc72e8df707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 260
+        width: 117
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673c092bfdb43d248bcaaa4fa38bfa78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 260
+        width: 117
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd84451000756e4ba450a5994889ca2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 263
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c81f41ca95b41e46b5c30d14ebbfb81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 137
+        width: 117
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28642ccf837e6054387fdda82d4031fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_5
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 136
+        width: 115
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f95b3f9f5531c4f80fd475fff9ffda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_6
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 138
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9bbbd490b84a344805fed1e023bf84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_7
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 137
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1e87b89bdaa724da080a66040e8d8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 14
+        width: 118
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb65f3ba4cceb945b6d2ffbddd9af9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 11
+        width: 113
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab42bd03dca153e4b95e48bdd539c293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_10
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 12
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5ef7950d58d9e43a1bc3f87f19b660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: http _d3ui957tjb5bqd.cloudfront.net_images_screenshots_products_181_1812_1812212_water-drop-splash-animation-frames-effect-for-games-vector-illustration-f_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 13
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102b25fef44592147a69171424000915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 90c88cc3c71c5bf4abeeb19910a5bc02
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
