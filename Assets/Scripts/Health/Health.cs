@@ -10,12 +10,29 @@ public class Health : MonoBehaviour {
     [SerializeField]
     private float maxHP;
 
+    public bool invincible;
+
     HealthBar healthbar = null;
+
+    Hero_Movement heroMovement;
 
     void Start()
     {
         healthbar = GetComponentInChildren<HealthBar>();
+        heroMovement = GetComponent<Hero_Movement>();
+        invincible = false;
     }
+
+#if UNITY_EDITOR
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            invincible = !invincible;
+            Debug.Log("Switching to Godmode");
+        }
+    }
+#endif
 
     public float HP
     {
@@ -39,7 +56,15 @@ public class Health : MonoBehaviour {
 
     public void Damage(int damage)
     {
-        HP -= damage;
+        if(invincible == false)
+            HP -= damage;
+
+        if (heroMovement != null && damage > 0)
+        { 
+
+            Debug.Log("Vibrating");
+            heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);
+        }
     }
 
     private void Die()

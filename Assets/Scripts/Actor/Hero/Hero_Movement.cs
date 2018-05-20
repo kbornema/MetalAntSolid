@@ -7,7 +7,8 @@ public class Hero_Movement : MonoBehaviour {
     [SerializeField]
     private Actor _actor;
 
-    Rewired.Player playerInput;
+    [SerializeField]
+    public Rewired.Player playerInput;
     public Rigidbody2D rgbd;
 
     Vector2 moveDirection;
