@@ -31,10 +31,8 @@ public class Trash : MonoBehaviour {
         }
     }
     private float _shakeDuration = 0;
-    
     [SerializeField]
     private float _shakeAmount = 0.15f;
-
     private Vector2 _originalPosition;
 
     private void Awake()
