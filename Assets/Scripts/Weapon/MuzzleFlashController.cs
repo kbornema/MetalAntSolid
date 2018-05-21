@@ -6,7 +6,8 @@ public class MuzzleFlashController : MonoBehaviour
 {
 
     BulletSpawnPoint bulletSpawnPoint;
-    SpriteRenderer spriteRenderer;
+
+    SpriteRenderer[] spriteRenderer;
 
     float currentMuzzleFlashTimer;
 
@@ -17,7 +18,7 @@ public class MuzzleFlashController : MonoBehaviour
     {
         bulletSpawnPoint = this.transform.parent.GetComponentInChildren<BulletSpawnPoint>();
         this.transform.position = bulletSpawnPoint.transform.position;
-        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        spriteRenderer = this.GetComponentsInChildren<SpriteRenderer>();
         SetAlphaForSpriteRenderer(0f);
         timer = new FloatTimer(0f, false);
         currentMuzzleFlashTimer = 0.1f;
@@ -37,7 +38,14 @@ public class MuzzleFlashController : MonoBehaviour
 
     public void SetAlphaForSpriteRenderer(float alpha)
     {
-        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
+        for (int i = 0; i < spriteRenderer.Length; i++)
+        {
+            var color = spriteRenderer[i].color;
+            color.a = alpha;
+
+            spriteRenderer[i].color = color;
+        }
+      
     }
 
     public void InitMuzzleFlash(float duration, Vector2 dir)
