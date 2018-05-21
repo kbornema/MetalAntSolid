@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Trash : MonoBehaviour {
 
@@ -12,6 +13,22 @@ public class Trash : MonoBehaviour {
     private int _eatingSteps;
     [SerializeField]
     private bool _isShaking = true;
+
+    #region Events
+    [HideInInspector]
+    public class TrashFinished : UnityEvent { }
+    [HideInInspector]
+    private TrashFinished _eventInstance = new TrashFinished();
+
+    public void InvokeTrashFinishedEvent()
+    {
+        _eventInstance.Invoke();
+    }
+    public void AddOnTrashFinishedEventListener(UnityAction listener)
+    {
+        _eventInstance.AddListener(listener);
+    }
+    #endregion
 
     public int EatingTrash()
     {
@@ -42,7 +59,11 @@ public class Trash : MonoBehaviour {
     private void Update()
     {   
         if (_capacity == 0)
+        {
+            InvokeTrashFinishedEvent();
             Destroy(this.gameObject);
+        }
+
 
         if (!_isShaking)
             return;

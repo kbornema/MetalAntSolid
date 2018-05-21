@@ -6,6 +6,7 @@ public class AntVisual : MonoBehaviour
 {
     [SerializeField]
     private AntBodyPart[] _bodyParts;
+    public AntBodyPart[] BodyParts { get { return _bodyParts; } }
 
     [SerializeField]
     private TeamColorSetting _colorSetting;
