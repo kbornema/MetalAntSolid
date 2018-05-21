@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class MatchManager : MonoBehaviour  {
 
@@ -10,6 +11,9 @@ public class MatchManager : MonoBehaviour  {
     [SerializeField]
     private ObjectPoolManager _poolManager;
     public ObjectPoolManager PoolManager { get { return _poolManager; } }
+
+    [SerializeField, Header("Only for Main")]
+    private GUI_Fade _fadeCanvas;
 
     Dictionary<PlayerTyp, int> _resourcesDic;
     Dictionary<PlayerTyp, int> _victoryPointsDic;
@@ -71,8 +75,12 @@ public class MatchManager : MonoBehaviour  {
     }
     private void Init()
     {
+        if(_fadeCanvas)
+            _fadeCanvas.OnClicked(true);
+
         if (_spawnPlayer)
         {
+            _players = new List<Actor>();
             for (int i = 0; i < _howOften; i++)
                 InitPlayer(i);
         }
@@ -85,6 +93,28 @@ public class MatchManager : MonoBehaviour  {
         _victoryPointsDic.Add(PlayerTyp.Player1, 0);
         _victoryPointsDic.Add(PlayerTyp.Player2, 0);
     }
+    public Actor GetOtherPlayer(int myId)
+    {
+        if (myId == 1)
+                return _players[0];
+        else
+        {
+            if (_players.Count > 1)
+                return _players[1];
+            else
+                return null;
+        }
+    }
+
+    public void GameOver()
+    {
+
+        SceneManager.LoadScene("MainGameOver");
+
+
+
+            
+    }
 
     public void CalculateResources(PlayerTyp playertyp, int value)
     {
@@ -95,11 +125,7 @@ public class MatchManager : MonoBehaviour  {
             InvokeResourceEvent(playertyp, _resourcesDic[playertyp]);
     }
 
-    public void ResetPlayer(GameObject player)
-    {
-        // Reset Player Position
-        player.transform.position = Vector3.zero;
-        player.transform.rotation = Quaternion.identity;
+    List<Actor> _players;
 
         // Reset PlayerScripts
         player.GetComponent<Health>().ResetHP();
@@ -109,10 +135,13 @@ public class MatchManager : MonoBehaviour  {
 
     public void InitPlayer(int PlayerID)
     {
+
         var instance = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity, null);
         instance.Init(PlayerID);
+        var actor = instance.GetComponent<Actor>();
+        _players.Add(actor);
 
-        if(_mainCamera != null)
+        if (_mainCamera != null)
             _mainCamera.AddTarget(instance.MyCamTarget);
     }
 
@@ -131,11 +160,32 @@ public class MatchManager : MonoBehaviour  {
         ResetPlayer(player);
         player.SetActive(false);
         player.GetComponent<CamTarget>().ValidTarget = false;
+
+        if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
+            GameOver();
+
         yield return new WaitForSeconds(3);
+
+        if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
+            GameOver();
+
         Debug.Log("Respawning Player " + playerID);
         player.SetActive(true);
         player.GetComponent<CamTarget>().ValidTarget = true;
     }
+
+    public void ResetPlayer(GameObject player)
+    {
+        // Reset Player Position
+        player.transform.position = GetOtherPlayer(player.GetComponent<Actor>().PlayerID).transform.position;
+        player.transform.rotation = Quaternion.identity;
+
+        // Reset PlayerScripts
+        player.GetComponent<Health>().ResetHP();
+        player.GetComponent<Hero_Movement>().antVisual.SetMovePercent(0);
+        player.GetComponentInChildren<Hero_Wpn_Controller>().switchToWeapon(playerPrefab.GetComponentInChildren<Hero_Wpn_Controller>().GetComponentInChildren<Hero_Wpn_Info>());
+    }
+
 
     public enum PlayerTyp
     {
