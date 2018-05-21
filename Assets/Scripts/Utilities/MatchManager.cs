@@ -104,7 +104,7 @@ public class MatchManager : MonoBehaviour  {
         // Reset PlayerScripts
         player.GetComponent<Health>().ResetHP();
         player.GetComponent<Hero_Movement>().antVisual.SetMovePercent(0);
-        player.GetComponentInChildren<Hero_Wpn_Controller>().switchToWeapon(playerPrefab.GetComponentInChildren<Hero_Wpn_Controller>().GetComponentInChildren<Hero_Wpn_Info>());
+        player.GetComponentInChildren<Hero_Wpn_Controller>().switchToWeapon(player.GetComponentInChildren<Hero_Wpn_Controller>().GetComponentInChildren<Hero_Wpn_Info>());
     }
 
     public void InitPlayer(int PlayerID)
