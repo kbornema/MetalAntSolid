@@ -2609,6 +2609,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13

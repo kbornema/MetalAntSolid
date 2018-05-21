@@ -59,6 +59,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1448548056555950
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4028186504843138}
+  - component: {fileID: 114896120984746858}
+  m_Layer: 0
+  m_Name: lazerBulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1513465500105518
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4653888085673900}
+  - component: {fileID: 114039991105168074}
+  m_Layer: 0
+  m_Name: sniperBulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1525146999999678
 GameObject:
   m_ObjectHideFlags: 1
@@ -117,24 +149,37 @@ GameObject:
   - component: {fileID: 4157231870768296}
   - component: {fileID: 114136109216677256}
   m_Layer: 0
-  m_Name: sniperBulletPool
+  m_Name: shotGunBulletPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4028186504843138
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448548056555950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4244738964730288}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4157231870768296
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868999139353220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4244738964730288}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4244738964730288
 Transform:
@@ -147,6 +192,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4354200936240276}
+  - {fileID: 4653888085673900}
+  - {fileID: 4028186504843138}
   - {fileID: 4157231870768296}
   - {fileID: 4440970389071798}
   - {fileID: 4335218135707776}
@@ -164,7 +211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4244738964730288}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4354200936240276
 Transform:
@@ -190,7 +237,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4244738964730288}
-  m_RootOrder: 2
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4653888085673900
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513465500105518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4244738964730288}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4827219379446888
 Transform:
@@ -827,6 +887,18 @@ MonoBehaviour:
     customControllerIdCounter: 0
   _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
     type: 2}
+--- !u!114 &114039991105168074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513465500105518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017a9457a7b99c14b9eab5f4a54920ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 114551498494291536, guid: 76e7f1d1f36c73b4e8f44f60d85a29c0, type: 2}
 --- !u!114 &114098304078100220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,6 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 0}
   _poolManager: {fileID: 114594246309891932}
+  _fadeCanvas: {fileID: 0}
   _spawnPlayer: 1
   _howOften: 2
   playerPrefab: {fileID: 114878403699604122, guid: 5e371d54d97b7d3438fc11b758c27f19,
@@ -867,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017a9457a7b99c14b9eab5f4a54920ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 114551498494291536, guid: 76e7f1d1f36c73b4e8f44f60d85a29c0, type: 2}
+  prefab: {fileID: 114551498494291536, guid: 76a4aaf12db8d50438cc9a386876894c, type: 2}
 --- !u!114 &114312181345884462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -892,7 +965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalBulletPool: {fileID: 1363760160205698}
-  sniperBulletPool: {fileID: 1868999139353220}
+  sniperBulletPool: {fileID: 1513465500105518}
+  lazerBulletPool: {fileID: 1448548056555950}
+  shotGunBulletPool: {fileID: 1868999139353220}
   antPool: {fileID: 1027477070066086}
   orbitingAntPool: {fileID: 1525146999999678}
 --- !u!114 &114771250752140242
@@ -906,4 +981,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be5b51dbc50bfb4eb5835f97dda6f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 114526009955349990, guid: 765b8e32e459eed47a342edc7321a711, type: 2}
+  prefab: {fileID: 0}
+--- !u!114 &114896120984746858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448548056555950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017a9457a7b99c14b9eab5f4a54920ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 114551498494291536, guid: 618746ca1434f9c4baf6360eaf7e1cc0, type: 2}

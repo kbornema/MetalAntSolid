@@ -108,14 +108,15 @@ public class Hero_Wpn_Controller : MonoBehaviour {
 
     public void Fire()
     {
-        currentCoolDown = wpnInfo.fireSpeed;
-        BaseBullet bullet = wpnInfo.bulletPool.GetObject() as BaseBullet;
-
         Vector2 currentAimDirection = Quaternion.AngleAxis(Random.Range(-currentSpray, currentSpray), Vector3.forward) * aimDirection;
-        bullet.InitBullet(bulletSpawnPoint.transform.position, currentAimDirection, team.Team);
-        bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
-        
-
+        currentCoolDown = wpnInfo.fireSpeed;
+        for (int i = 0; i < wpnInfo.numberOfBulletsPerShot; i++)
+        {
+            currentAimDirection = Quaternion.AngleAxis(Random.Range(-currentSpray, currentSpray), Vector3.forward) * aimDirection;
+            BaseBullet bullet = wpnInfo.bulletPool.GetObject() as BaseBullet;
+            bullet.InitBullet(bulletSpawnPoint.transform.position, currentAimDirection, team.Team);
+            bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
+        }
 
         currentHeat += wpnInfo.heatGenerationPerShot;
         if(currentHeat > wpnInfo.heatLimit)
