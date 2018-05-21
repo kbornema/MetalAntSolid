@@ -73,7 +73,6 @@ public class BaseBullet : PooledObject
             {
                 collision.GetComponent<Health>().Damage(damage);
                 Vector2 knockBack = Direction.normalized * knockBackForce;
-                Debug.Log("Knocking ant back with: " + knockBack);
                 collision.GetComponent<Rigidbody2D>().position += knockBack;
                 ReturnToPool();
             }

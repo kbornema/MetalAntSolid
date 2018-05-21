@@ -10,6 +10,7 @@ public class AntVisual : MonoBehaviour
 
     [SerializeField]
     private TeamColorSetting _colorSetting;
+    public TeamColorSetting ColorSetting { get { return _colorSetting; } }
 
     [SerializeField]
     private Animator _animator;
