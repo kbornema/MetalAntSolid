@@ -2068,6 +2068,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}

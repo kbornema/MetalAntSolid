@@ -12,6 +12,8 @@ public class Standard_Weapon_Controller : MonoBehaviour {
     public GameObject antVisual;
     [HideInInspector]
     public GameObject Weapon;
+    [HideInInspector]
+    public MuzzleFlashController muzzleFlash;
 
     public Vector2 targetDirection;
     public Vector2 aimDirection;
@@ -50,6 +52,7 @@ public class Standard_Weapon_Controller : MonoBehaviour {
         {
             bulletSpawnPoint = antVisual.GetComponentInChildren<BulletSpawnPoint>();
             Weapon = bulletSpawnPoint.transform.parent.gameObject;
+            muzzleFlash = Weapon.GetComponentInChildren<MuzzleFlashController>();
         }
         else
         {
@@ -158,6 +161,9 @@ public class Standard_Weapon_Controller : MonoBehaviour {
 
     public void Fire()
     {
+        if (wpnInfo && wpnInfo.shootAudio)
+            MyAudio.Create(wpnInfo.shootAudio, transform.position);
+
         currentCoolDown = wpnInfo.fireSpeed;
         for (int i = 0; i < wpnInfo.numberOfBulletsPerShot; i++)
         {
@@ -165,6 +171,7 @@ public class Standard_Weapon_Controller : MonoBehaviour {
             bullet.InitBullet(bulletSpawnPoint.transform.position, aimDirection, teamAssignment.Team);
             bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
         }
+        muzzleFlash.InitMuzzleFlash(0.05f, aimDirection);
     }
 
 }

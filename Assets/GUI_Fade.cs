@@ -34,7 +34,11 @@ public class GUI_Fade : MonoBehaviour {
                 yield return null;
             }
             if (_sceneName != "")
+            {
+                MatchManager.ResetSingletion();
                 SceneManager.LoadScene(_sceneName);
+            }
+
         }
         else
         {

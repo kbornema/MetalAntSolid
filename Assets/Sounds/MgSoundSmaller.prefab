@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 82181088220174480}
-  _volumeMin: 0.5
-  _volumeMax: 0.6
+  _volumeMin: 0.45
+  _volumeMax: 0.5
   _pitchMin: 1
   _pitchMax: 1.2
   _playOnStart: 1

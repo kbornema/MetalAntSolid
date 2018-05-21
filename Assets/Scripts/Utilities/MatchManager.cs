@@ -24,12 +24,16 @@ public class MatchManager : MonoBehaviour  {
     private int _howOften = 1;
     public Actor playerPrefab;
 
+
+    List<Actor> _players;
+
     #region Singleton
     private static MatchManager _instance = null;
     public static MatchManager Instance()
     {
         return _instance;
     }
+    
 
     #endregion
     #region ResourcesEvent
@@ -69,13 +73,24 @@ public class MatchManager : MonoBehaviour  {
         if (_instance == null)
             _instance = this;
         else
+        {
             Destroy(gameObject);
+
+            return;
+        }
+
 
         Init();
     }
+    public static void ResetSingletion()
+    {
+        _instance = null;
+    }
+
+
     private void Init()
     {
-        if(_fadeCanvas)
+        if (_fadeCanvas)
             _fadeCanvas.OnClicked(true);
 
         if (_spawnPlayer)
@@ -108,12 +123,7 @@ public class MatchManager : MonoBehaviour  {
 
     public void GameOver()
     {
-
         SceneManager.LoadScene("MainGameOver");
-
-
-
-            
     }
 
     public void CalculateResources(PlayerTyp playertyp, int value)
@@ -124,9 +134,6 @@ public class MatchManager : MonoBehaviour  {
         if (value != 0)
             InvokeResourceEvent(playertyp, _resourcesDic[playertyp]);
     }
-
-    List<Actor> _players;
-
     public void InitPlayer(int PlayerID)
     {
 
