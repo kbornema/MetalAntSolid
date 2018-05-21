@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _capacity: 400
-  _eatingSteps: 20
+  _eatingSteps: 30
   _isShaking: 1
+  _dontDestroy: 0
   _shakeAmount: 0.15
 --- !u!212 &212229438884151746
 SpriteRenderer:

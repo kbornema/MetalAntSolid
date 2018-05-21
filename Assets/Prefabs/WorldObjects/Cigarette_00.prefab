@@ -79,8 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _capacity: 500
-  _eatingSteps: 20
+  _eatingSteps: 75
   _isShaking: 1
+  _dontDestroy: 0
   _shakeAmount: 0.1
 --- !u!120 &120048634175714092
 LineRenderer:
