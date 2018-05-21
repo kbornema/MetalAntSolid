@@ -52,6 +52,7 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         bulletSpawnPoint = antVisual.GetComponentInChildren<BulletSpawnPoint>();
         Weapon = bulletSpawnPoint.transform.parent.gameObject;
         muzzleFlash = Weapon.GetComponentInChildren<MuzzleFlashController>();
+        _wpnInfo.SetObjectPoolManager();
 
         wpnInfo = _wpnInfo;
         currentCoolDown = _wpnInfo.fireSpeed;

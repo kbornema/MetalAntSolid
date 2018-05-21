@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 58351886221992174}
   - component: {fileID: 114309255284702992}
   m_Layer: 9
-  m_Name: Weapon
+  m_Name: AntWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1719,7 +1719,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629858913496210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8940983, y: -25.01491, z: 0}
+  m_LocalPosition: {x: 7.39, y: 4.09, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4015063315899190}
@@ -2277,6 +2277,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}
@@ -2915,7 +2916,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.4
   additionalDamage: 0
-  numberOfBulletsPerShot: 0
+  numberOfBulletsPerShot: 1
   rotationSpeed: 360
   aimRange: 10
   heatGenerationPerShot: 0.33
