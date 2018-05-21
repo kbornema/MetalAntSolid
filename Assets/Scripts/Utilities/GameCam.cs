@@ -14,7 +14,7 @@ public class GameCam : MonoBehaviour
     private float _moveSpeed = 5.0f;
 
     [SerializeField]
-    private float _treshold;
+    private float _treshold = 0.25f;
 
     [Header("Zoom")]
     [SerializeField]
@@ -22,16 +22,21 @@ public class GameCam : MonoBehaviour
     [SerializeField]
     private float _maxSize = 20.0f;
     [SerializeField]
+    private float _sizeScale = 1.25f;
+    [SerializeField]
     private float _perspectiveFactor = -2.0f;
 
     // Update is called once per frame
     private void Update ()
     {
-        Vector2 finalDir = Vector2.zero;
+        //Vector2 finalDir = Vector2.zero;
 
         float totalWeight = 0.0f;
 
         float maxDist = float.NegativeInfinity;
+
+        Vector2 targetPos = Vector2.zero;
+        int num = 0;
 
         for (int i = _targets.Count - 1; i >= 0; i--)
         {   
@@ -52,23 +57,31 @@ public class GameCam : MonoBehaviour
                 float weight = _targets[i].Weight;
 
                 totalWeight += weight;
-                finalDir += dir * weight;
+               
+
+                Vector2 tmpPos = _targets[i].transform.position;
+                targetPos += tmpPos * weight;
+                num++;
             }
         }
 
-      
+        if (num <= 0)
+            return;
 
-        Vector3 dir3 = finalDir;
+        Vector2 finalTargetPos = targetPos / (num * totalWeight);
 
-        if(dir3.sqrMagnitude > _treshold * _treshold)
+        if (Vector2.Distance(transform.position, finalTargetPos) > _treshold)
         {
-            dir3 = dir3 / totalWeight;
-            transform.position += dir3 * Time.deltaTime * _moveSpeed;
+            Vector2 myPos = transform.position;
+            Vector3 dir = finalTargetPos - myPos;
+            dir.Normalize();
 
+            transform.position += dir * Time.deltaTime * _moveSpeed;
         }
 
+        maxDist *= _sizeScale;
 
-        if(_camera.orthographic)
+        if (_camera.orthographic)
         {
             _camera.orthographicSize = Mathf.Clamp(maxDist, _minSize, _maxSize);
         }

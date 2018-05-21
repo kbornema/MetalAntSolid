@@ -16,8 +16,8 @@ public class SpawnFollower : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            currentFollowers.Add(SpawnAnt(followerAnt));
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //   currentFollowers.Add(SpawnAnt(followerAnt));
     }
     
     public void RemoveFollower(GameObject follower)

@@ -35,12 +35,14 @@ public class AntVisualEditor : Editor
         {
             t.HideParts(AntBodyPart.EBodyType.Armor);
             t.HideParts(AntBodyPart.EBodyType.Weapon);
+            t.EnableArmorLevel(0, false);
         }
 
         if(GUILayout.Button("Show Stuff"))
         {
             t.ShowParts(AntBodyPart.EBodyType.Armor);
             t.ShowParts(AntBodyPart.EBodyType.Weapon);
+            t.EnableArmorLevel(false);
         }
 
         GUILayout.EndHorizontal();
