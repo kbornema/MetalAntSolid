@@ -159,10 +159,12 @@ public class Standard_Weapon_Controller : MonoBehaviour {
     public void Fire()
     {
         currentCoolDown = wpnInfo.fireSpeed;
-        BaseBullet bullet = wpnInfo.bulletPool.GetObject() as BaseBullet;
-        bullet.InitBullet(bulletSpawnPoint.transform.position, aimDirection, teamAssignment.Team);
-        bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
-        
+        for (int i = 0; i < wpnInfo.numberOfBulletsPerShot; i++)
+        {
+            BaseBullet bullet = wpnInfo.bulletPool.GetObject() as BaseBullet;
+            bullet.InitBullet(bulletSpawnPoint.transform.position, aimDirection, teamAssignment.Team);
+            bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
+        }
     }
 
 }

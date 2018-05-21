@@ -10,6 +10,8 @@ public class ObjectPoolManager : MonoBehaviour {
     {
         NormalBullet,
         SniperBullet,
+        LazerBullet,
+        ShotGunBullet,
         ant,
         OrbitingAnt
     }
@@ -19,6 +21,10 @@ public class ObjectPoolManager : MonoBehaviour {
     public GameObject normalBulletPool;
 
     public GameObject sniperBulletPool;
+
+    public GameObject lazerBulletPool;
+
+    public GameObject shotGunBulletPool;
 
     public GameObject antPool;
 
@@ -32,6 +38,8 @@ public class ObjectPoolManager : MonoBehaviour {
         _dictionary.Add(PoolTyp.NormalBullet, normalBulletPool);
         _dictionary.Add(PoolTyp.SniperBullet, sniperBulletPool);
         _dictionary.Add(PoolTyp.OrbitingAnt, orbitingAntPool);
+        _dictionary.Add(PoolTyp.LazerBullet, lazerBulletPool);
+        _dictionary.Add(PoolTyp.ShotGunBullet, shotGunBulletPool);
 
     }
 

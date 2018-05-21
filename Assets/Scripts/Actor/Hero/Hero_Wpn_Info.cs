@@ -5,12 +5,13 @@ using UnityEngine;
 public class Hero_Wpn_Info : MonoBehaviour {
 
 
-    public enum WeaponType {MachineGun, NormalGun, Sniper };
+    public enum WeaponType {MachineGun, NormalGun, Sniper, ShotGun, Laser };
     public WeaponType weaponType;
     public ObjectPool bulletPool;
 
     public float fireSpeed; // time between 2 bullets
     public int additionalDamage;
+    public int numberOfBulletsPerShot;
     public float rotationSpeed;
     public float aimRange;
     [Space]
@@ -43,6 +44,12 @@ public class Hero_Wpn_Info : MonoBehaviour {
                 break;
             case WeaponType.Sniper:
                 bulletPool = objectPoolManager.sniperBulletPool.GetComponent<ObjectPool>();
+                break;
+            case WeaponType.ShotGun:
+                bulletPool = objectPoolManager.shotGunBulletPool.GetComponent<ObjectPool>();
+                break;
+            case WeaponType.Laser:
+                bulletPool = objectPoolManager.lazerBulletPool.GetComponent<ObjectPool>();
                 break;
             default: Debug.Log("no weapon type assigned"); break;
         }

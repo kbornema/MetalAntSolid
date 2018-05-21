@@ -85,7 +85,8 @@ MonoBehaviour:
   aimMode: 0
   Target: {fileID: 0}
   Weapon: {fileID: 0}
-  weaponSpawnPoint: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   currentHeat: 0
@@ -105,6 +106,8 @@ MonoBehaviour:
   weaponType: 2
   bulletPool: {fileID: 0}
   fireSpeed: 0.75
+  additionalDamage: 0
+  numberOfBulletsPerShot: 1
   rotationSpeed: 360
   aimRange: 12
   heatGenerationPerShot: 1
