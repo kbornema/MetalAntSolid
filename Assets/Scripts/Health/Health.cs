@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
 
     Hero_Movement heroMovement;
 
+    [SerializeField]
     private AntVisual _antVisual;
 
     void Start()
@@ -73,13 +74,13 @@ public class Health : MonoBehaviour
     {
         if (invincible == false)
             HP -= damage;
-
+        if(_antVisual)
+                _antVisual.Hurt(1.0f, 0.25f);
         if (heroMovement != null && damage > 0)
         {
             heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);
 
-            if(_antVisual)
-                _antVisual.Hurt(1.0f, 0.25f);
+           
         }
     }
 
