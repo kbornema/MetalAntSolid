@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AntVisual : MonoBehaviour
@@ -34,7 +35,20 @@ public class AntVisual : MonoBehaviour
     {
         EnableArmorLevel(_armorLevel);
         _animator.SetLayerWeight(1, 0.0f);
+
+        if(_colorSeed.Length == 0)
+            _colorSeed = RandomString(4);
+
+        Colorize();
     }
+
+    public static string RandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Repeat(chars, length)
+          .Select(s => s[Random.Range(0, s.Length)]).ToArray());
+    }
+
 
     public void EnableArmorLevel(bool setCurrent)
     {
