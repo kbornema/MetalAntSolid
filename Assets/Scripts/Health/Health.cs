@@ -21,6 +21,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     private AntVisual _antVisual;
 
+    private BloodSpawner _bloodSpawner;
+
     void Start()
     {
         healthbar = GetComponentInChildren<HealthBar>();
@@ -33,6 +35,10 @@ public class Health : MonoBehaviour
         {
             this.GetComponentInChildren<EatingBhvr>().AddOnEatingEventListener(GetHpFromFood);
         }
+
+        _bloodSpawner = GetComponent<BloodSpawner>();
+        if(_bloodSpawner)
+            _bloodSpawner.SetAntVisual(_antVisual);
     }
 
 #if UNITY_EDITOR
@@ -75,8 +81,13 @@ public class Health : MonoBehaviour
     {
         if (invincible == false)
             HP -= damage;
+
         if(_antVisual)
-                _antVisual.Hurt(1.0f, 0.25f);
+            _antVisual.Hurt(1.0f, 0.25f);
+
+        if (_bloodSpawner)
+            _bloodSpawner.SpawnBlood();
+
         if (heroMovement != null && damage > 0)
         {
             heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);

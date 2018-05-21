@@ -16,6 +16,9 @@ public class SpriteDecay : MonoBehaviour {
     [SerializeField, Range(0.0f, 1.0f)]
     private float _chancePermanent;
 
+    [SerializeField]
+    private List<Sprite> _sprites;
+
 
     private float _maxDur;
     private float _curDur;
@@ -23,6 +26,8 @@ public class SpriteDecay : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        TheSpriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Count)];
+
         _maxDur = _duration + Random.Range(-0.5f * _randTimeDeviation, 0.5f * _randTimeDeviation);
         _curDur = _maxDur;
 

@@ -56,7 +56,10 @@ MonoBehaviour:
   _startAlpha: 0.6
   _duration: 4
   _randTimeDeviation: 0.25
-  _chancePermanent: 0
+  _chancePermanent: 0.25
+  _sprites:
+  - {fileID: 21300000, guid: 545948319e2e959449dbb6c491a10cee, type: 3}
+  - {fileID: 21300000, guid: 8ecbb83f08ca3574abb86f33914f51fa, type: 3}
 --- !u!212 &212675413045437758
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 114172735032519178}
   - component: {fileID: 114575775775624310}
   - component: {fileID: 114119654705040890}
+  - component: {fileID: 114030848765620930}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2544,6 +2545,25 @@ MonoBehaviour:
   BodyType: 1
   ArmorLevel: 0
   Limb: 4
+--- !u!114 &114030848765620930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156043380280036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ce7f56818b8944b9ef9142e5d30e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnParticles:
+  - {fileID: 114457247861461270, guid: 32f36160ae8488a42a0f4e0079902e67, type: 2}
+  _scaleMin: {x: 0.75, y: 0.75, z: 0.75}
+  _scaleMax: {x: 1.1, y: 1.1, z: 1.1}
+  _rangeMin: 0.25
+  _rangeMax: 1
+  _minNum: 1
+  _maxNum: 3
 --- !u!114 &114031142254008988
 MonoBehaviour:
   m_ObjectHideFlags: 1

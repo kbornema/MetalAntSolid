@@ -19,13 +19,20 @@ public class BloodSpawner : MonoBehaviour
     [SerializeField]
     private float _rangeMax = 1.0f;
 
-    private void Start()
+    [SerializeField]
+    private int _minNum = 1;
+    [SerializeField]
+    private int _maxNum = 3;
+
+    public void SetAntVisual(AntVisual antVisual)
     {
-        _antVisual = GetComponentInChildren<AntVisual>();
+        _antVisual = antVisual;
     }
 
-    public void SpawnBlood(int num)
+    public void SpawnBlood()
     {
+        int num = Random.Range(_minNum, _maxNum);
+
         for (int i = 0; i < num; i++)
         {
             var prefab = _spawnParticles[Random.Range(0, _spawnParticles.Count)];
@@ -36,13 +43,16 @@ public class BloodSpawner : MonoBehaviour
             Vector2 randDir = new Vector2(Mathf.Sin(pi), Mathf.Cos(pi)) * Random.Range(_rangeMin, _rangeMax);
 
 
-            var instance = Instantiate(prefab, pos + randDir, Random.rotation);
+            var instance = Instantiate(prefab, pos + randDir, Quaternion.identity);
+
+            Vector3 rotation = new Vector3(0.0f, 0.0f, Random.Range(0.0f, 360.0f));
 
             if(_antVisual)
             {
                 instance.TheSpriteRenderer.color = _antVisual.ColorSetting.GetBloodColor(Random.value);
             }
-
+            
+            instance.transform.Rotate(rotation);
             instance.transform.localScale = Vector3.Lerp(_scaleMin, _scaleMax, Random.value);
                 
         }
