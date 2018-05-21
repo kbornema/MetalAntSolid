@@ -17,11 +17,15 @@ public class Health : MonoBehaviour
 
     Hero_Movement heroMovement;
 
+    private AntVisual _antVisual;
+
     void Start()
     {
         healthbar = GetComponentInChildren<HealthBar>();
         heroMovement = GetComponent<Hero_Movement>();
         invincible = false;
+
+        _antVisual = GetComponentInChildren<AntVisual>();
     }
 
 #if UNITY_EDITOR
@@ -63,6 +67,9 @@ public class Health : MonoBehaviour
         if (heroMovement != null && damage > 0)
         {
             heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);
+
+            if(_antVisual)
+                _antVisual.Hurt(1.0f, 0.25f);
         }
     }
 
