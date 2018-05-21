@@ -20,9 +20,12 @@ public class GoToBehavior : SteeringAntBehavior {
         }
         else
         {
-            walkingTarget = null;
+            if (walkingTarget != null)
+            {
+                walkingTarget.RemoveFollower(this.gameObject);
+                walkingTarget = null;
+            }
             this.gameObject.SetActive(false);
-            walkingTarget.RemoveFollower(this.gameObject);
             return new WalkingBehavior(direction, 0.0f);
         }
     }
@@ -30,12 +33,18 @@ public class GoToBehavior : SteeringAntBehavior {
 
     public void SetTarget(FollowerTarget target)
     {
+        if (walkingTarget != null)
+        {
+            walkingTarget.RemoveFollower(this.gameObject);
+        }
         walkingTarget = target;
         target.RegisterFollower(this.gameObject);
     }
 
     public GameObject GetTarget()
     {
-        return walkingTarget.gameObject;
+        if (walkingTarget != null)
+            return walkingTarget.gameObject;
+        return null;
     }
 }

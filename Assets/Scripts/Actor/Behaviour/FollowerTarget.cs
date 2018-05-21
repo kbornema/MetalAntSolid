@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class FollowerTarget : MonoBehaviour {
 
-    LinkedList<GameObject> followerList;
+    [SerializeField]
+    LinkedList<GameObject> followerList = new LinkedList<GameObject>();
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        bool hasFollowers = false;
         foreach (GameObject follower in followerList)
         {
-            if (follower == null)
+            if (follower != null)
             {
-
+                hasFollowers = true;
+                break;
             }
+        }
+        if (!hasFollowers)
+        {
+            Destroy(this.gameObject);
         }
 	}
 
