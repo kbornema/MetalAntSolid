@@ -1685,7 +1685,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1764275649599094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0975647, y: -25.099129, z: 0}
+  m_LocalPosition: {x: 2.460535, y: -31.484024, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4849961916074596}
@@ -2620,6 +2620,8 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 114216677783412150, guid: 9dcedb8c4eac6db4e979fcdd4cf5b55b,
+    type: 2}
 --- !u!114 &114956318323582592
 MonoBehaviour:
   m_ObjectHideFlags: 1
