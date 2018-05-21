@@ -87,6 +87,13 @@ public class MatchManager : MonoBehaviour  {
         _instance = null;
     }
 
+    public IEnumerator WaitFunction(float timer, GameObject obj)
+    {
+        obj.gameObject.SetActive(false);
+        yield return new WaitForSeconds(timer);
+        obj.gameObject.SetActive(true);
+    }
+
 
     private void Init()
     {
