@@ -7334,6 +7334,7 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 0}
 --- !u!114 &114200181774322676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7839,6 +7840,7 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 0}
 --- !u!114 &114418677980887360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8517,6 +8519,7 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 0}
 --- !u!114 &114628234424709962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9635,6 +9638,7 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 0}
 --- !u!114 &114978408201778284
 MonoBehaviour:
   m_ObjectHideFlags: 1

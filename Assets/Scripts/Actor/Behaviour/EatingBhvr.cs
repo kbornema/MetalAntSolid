@@ -30,6 +30,9 @@ public class EatingBhvr : MonoBehaviour {
     [SerializeField]
     private Rigidbody2D _rigidbody;
 
+    [SerializeField]
+    private MyAudio _eatAudio;
+
     private void Start()
     {
         _player = Rewired.ReInput.players.GetPlayer(_actor.PlayerID);
@@ -43,7 +46,12 @@ public class EatingBhvr : MonoBehaviour {
         if (_visual)
         {
             if (_player.GetButtonDown("ButtonA") && !_visual.IsEating())
+            {
+                if(_eatAudio)
+                    MyAudio.Create(_eatAudio, transform.position);
+
                 _visual.SetEating(true);
+            }
         }
 
 

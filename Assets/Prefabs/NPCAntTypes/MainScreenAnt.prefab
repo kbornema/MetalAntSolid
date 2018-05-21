@@ -1889,6 +1889,7 @@ MonoBehaviour:
   maxSprayAngle: 12
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 3
+  shootAudio: {fileID: 0}
 --- !u!114 &114457978795742172
 MonoBehaviour:
   m_ObjectHideFlags: 1
