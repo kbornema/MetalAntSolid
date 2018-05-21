@@ -26,8 +26,8 @@ public class CommandFollower : MonoBehaviour {
         {
             Vector3 targetPosition = bulletSpawnPoint.transform.position + (bulletSpawnPoint.transform.position - bulletSpawnPoint.transform.parent.position)*3;
 
-            GameObject target = Instantiate(targetPrefab);
-            target.transform.position =  targetPosition;
+            FollowerTarget target = Instantiate(targetPrefab).GetComponent<FollowerTarget>();
+            target.transform.position = targetPosition;
 
             foreach (GameObject follower in spawnfollower.currentFollowers)
             {

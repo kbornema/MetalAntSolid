@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoToBehavior : SteeringAntBehavior {
 
     [SerializeField]
-    GameObject walkingTarget;
+    FollowerTarget walkingTarget;
 
     [SerializeField]
     float targetDistance = 2;
@@ -22,18 +22,20 @@ public class GoToBehavior : SteeringAntBehavior {
         {
             walkingTarget = null;
             this.gameObject.SetActive(false);
+            walkingTarget.RemoveFollower(this.gameObject);
             return new WalkingBehavior(direction, 0.0f);
         }
     }
     
 
-    public void SetTarget(GameObject target)
+    public void SetTarget(FollowerTarget target)
     {
         walkingTarget = target;
+        target.RegisterFollower(this.gameObject);
     }
 
     public GameObject GetTarget()
     {
-        return walkingTarget;
+        return walkingTarget.gameObject;
     }
 }
