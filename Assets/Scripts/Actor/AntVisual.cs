@@ -20,12 +20,20 @@ public class AntVisual : MonoBehaviour
     [SerializeField]
     private int _armorLevel = 0;
 
+    [SerializeField]
+    private string _colorSeed = "Queen";
+
     private void Start()
     {
         EnableArmorLevel(_armorLevel);
     }
 
-    public void EnableArmorLevel(int level)
+    public void EnableArmorLevel(bool setCurrent)
+    {
+        EnableArmorLevel(_armorLevel, false);
+    }
+
+    public void EnableArmorLevel(int level, bool setCurrent = true)
     {
         for (int i = 0; i < _bodyParts.Length; i++)
         {
@@ -35,7 +43,8 @@ public class AntVisual : MonoBehaviour
                 _bodyParts[i].gameObject.SetActive(false);
         }
 
-        _armorLevel = level;
+        if(setCurrent)
+            _armorLevel = level;
     }
 
 
@@ -95,6 +104,8 @@ public class AntVisual : MonoBehaviour
         if (!_colorSetting)
             return;
 
+        System.Random random = new System.Random(_colorSeed.GetHashCode());
+
         Dictionary<string, float> _randValues = new Dictionary<string, float>();
 
         foreach (var p in _bodyParts)
@@ -107,7 +118,7 @@ public class AntVisual : MonoBehaviour
                 rand = _randValues[key];
             else
             {
-                rand = Random.value;
+                rand = (float)random.NextDouble();
                 _randValues.Add(key, rand);
             }
 
@@ -130,7 +141,7 @@ public class AntVisual : MonoBehaviour
 #if UNITY_EDITOR
     public void FindBodyTypes()
     {
-        _bodyParts = gameObject.GetComponentsInChildren<AntBodyPart>();
+        _bodyParts = gameObject.GetComponentsInChildren<AntBodyPart>(true);
 
         UnityEditor.EditorUtility.SetDirty(gameObject);
     }
