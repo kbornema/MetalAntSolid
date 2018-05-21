@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 82679780442758544}
   - component: {fileID: 114902912281517444}
   m_Layer: 0
-  m_Name: EatSound
+  m_Name: HurtSound_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ada40c7a8c91c14387efb92550c6631, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a60be4bdd23efe146813fb336ce884f9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 2
