@@ -2525,6 +2525,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antWeapon: {fileID: 1233180445803628}
+--- !u!114 &114119654705040890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156043380280036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888a3b33551a7f647b87d9cfc4167fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnfollower: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  targetPrefab: {fileID: 1884132166095114, guid: 030836dd21f8ed64d8be6a02ac502be0,
+    type: 2}
 --- !u!114 &114120479146763048
 MonoBehaviour:
   m_ObjectHideFlags: 1
