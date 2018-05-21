@@ -161,6 +161,9 @@ public class Standard_Weapon_Controller : MonoBehaviour {
 
     public void Fire()
     {
+        if (wpnInfo && wpnInfo.shootAudio)
+            MyAudio.Create(wpnInfo.shootAudio, transform.position);
+
         currentCoolDown = wpnInfo.fireSpeed;
         for (int i = 0; i < wpnInfo.numberOfBulletsPerShot; i++)
         {

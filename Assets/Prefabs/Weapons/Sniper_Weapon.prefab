@@ -118,3 +118,5 @@ MonoBehaviour:
   maxSprayAngle: 2.5
   sprayIncreasePerShot: 0.8
   sprayDecreasePerSecond: 1
+  shootAudio: {fileID: 114216677783412150, guid: 9639d732822bcea4dae083adc4c3326a,
+    type: 2}

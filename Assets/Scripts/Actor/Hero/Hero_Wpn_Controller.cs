@@ -34,8 +34,6 @@ public class Hero_Wpn_Controller : MonoBehaviour {
     public float currentSpray;
     TeamAssignment team;
 
-    
-
 	// Use this for initialization
 	void Start () {
         aimDirection = Vector2.up;
@@ -109,6 +107,9 @@ public class Hero_Wpn_Controller : MonoBehaviour {
 
     public void Fire()
     {
+        if (wpnInfo && wpnInfo.shootAudio)
+            MyAudio.Create(wpnInfo.shootAudio, transform.position);
+
         Vector2 currentAimDirection = Quaternion.AngleAxis(Random.Range(-currentSpray, currentSpray), Vector3.forward) * aimDirection;
         currentCoolDown = wpnInfo.fireSpeed;
         for (int i = 0; i < wpnInfo.numberOfBulletsPerShot; i++)

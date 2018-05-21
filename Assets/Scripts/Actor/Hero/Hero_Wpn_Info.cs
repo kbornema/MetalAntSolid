@@ -24,6 +24,8 @@ public class Hero_Wpn_Info : MonoBehaviour {
     public float maxSprayAngle;
     public float sprayIncreasePerShot;
     public float sprayDecreasePerSecond;
+
+    public MyAudio shootAudio;
     
     // Use this for initialization
     void Start () {
