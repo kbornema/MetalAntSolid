@@ -15,6 +15,8 @@ public class Hero_Wpn_Controller : MonoBehaviour {
     public Hero_Wpn_Info wpnInfo;
     private HealthBar healthBar;
 
+    public List<Hero_Wpn_Info> weaponInfos; 
+
     public EAimMode aimMode;
     public GameObject Target;
     [HideInInspector]
@@ -41,18 +43,21 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         _actor = GetComponentInParent<Actor>();
         playerInput = Rewired.ReInput.players.GetPlayer(_actor.PlayerID);
 
+        weaponInfos = new List<Hero_Wpn_Info>();
+        weaponInfos.Add(wpnInfo);
         switchToWeapon(wpnInfo);
     }
 
     public void switchToWeapon(Hero_Wpn_Info _wpnInfo)
     {
+        wpnInfo = _wpnInfo;
+
         GameObject antVisual = this.transform.parent.GetComponentInChildren<AntVisual>().gameObject;
         bulletSpawnPoint = antVisual.GetComponentInChildren<BulletSpawnPoint>();
         Weapon = bulletSpawnPoint.transform.parent.gameObject;
         muzzleFlash = Weapon.GetComponentInChildren<MuzzleFlashController>();
-        _wpnInfo.SetObjectPoolManager();
+        wpnInfo.SetObjectPoolManager();
 
-        wpnInfo = _wpnInfo;
         currentCoolDown = _wpnInfo.fireSpeed;
         currentHeatCooldown = 0;
         currentHeat = 0;
@@ -61,6 +66,28 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         healthBar = this.transform.parent.GetComponentInChildren<HealthBar>();
 
         team = GetComponentInParent<TeamAssignment>();
+    }
+
+    public void Update()
+    {
+        if (playerInput.GetButtonDown("padUp") && weaponInfos.Count > 0)
+        {
+            switchToWeapon(weaponInfos[0]);
+        }
+        else if (playerInput.GetButtonDown("padRight") && weaponInfos.Count > 1)
+        {
+            switchToWeapon(weaponInfos[1]);
+
+        }
+        else if (playerInput.GetButtonDown("padDown") && weaponInfos.Count > 2)
+        {
+            switchToWeapon(weaponInfos[2]);
+        }
+        else if (playerInput.GetButtonDown("padLeft") && weaponInfos.Count > 3)
+        {
+            switchToWeapon(weaponInfos[3]);
+        }
+
     }
 
     // Update is called once per frame
