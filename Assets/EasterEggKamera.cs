@@ -12,7 +12,6 @@ public class EasterEggKamera : MonoBehaviour {
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("DRIN");
             _position = _mainCamera.transform.position;
             _mainCamera.transform.position = new Vector3(0, -20, -10);
         }
@@ -23,7 +22,6 @@ public class EasterEggKamera : MonoBehaviour {
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("RAUS");
             _mainCamera.transform.position = _position;
         }
     }
