@@ -1248,6 +1248,11 @@ Prefab:
       propertyPath: m_Name
       value: MatchManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114098304078100220, guid: ac3bd19bc4e07704fa2960f1e67badd4,
+        type: 2}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 92004781}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac3bd19bc4e07704fa2960f1e67badd4, type: 2}
   m_IsPrefabParent: 0
