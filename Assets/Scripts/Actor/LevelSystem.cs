@@ -39,7 +39,7 @@ public class LevelSystem : MonoBehaviour {
     #region Powerups
 
     public List<GameObject> towerList;
-    public List<Hero_Wpn_Controller> weaponList;
+    public List<Hero_Wpn_Info> weaponList;
 
     SpawnFollower antSpawner;
     AntVisual antVisual;
@@ -78,8 +78,14 @@ public class LevelSystem : MonoBehaviour {
     void UpgradeWeapon()
     {
         Debug.Log("Upgrading Weapon");
-        Destroy(this.transform.parent.GetComponentInChildren<Hero_Wpn_Controller>());
-        Hero_Wpn_Controller weapon = Instantiate(weaponList[Random.Range(0, weaponList.Count)], this.transform.parent);
+        // Destroy(this.transform.parent.GetComponentInChildren<Hero_Wpn_Controller>());
+        Hero_Wpn_Controller weapon = this.transform.parent.GetComponentInChildren<Hero_Wpn_Controller>();
+        if (weapon.weaponInfos.Count > 3)
+            return;
+        Hero_Wpn_Info newWeaponInfo = Instantiate(weaponList[weapon.weaponInfos.Count], weapon.transform);
+        weapon.weaponInfos.Add(newWeaponInfo);
+        weapon.switchToWeapon(newWeaponInfo);
+        // Hero_Wpn_Controller weapon = Instantiate(weaponList[Random.Range(0, weaponList.Count)], this.transform.parent);
         // weapon.switchToWeapon(weapon.GetComponentInChildren<Hero_Wpn_Info>());
     }
 
