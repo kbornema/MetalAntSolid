@@ -18,6 +18,10 @@ public class Actor : MonoBehaviour
     private int _playerID;
     public int PlayerID { get { return _playerID; } }
 
+    [SerializeField]
+    private Health _myHealth;
+    public Health MyHealth { get { return _myHealth; } }
+
     #region
     public EatingFloatingText EatingFloating { get { return _eatingFloatingText; } }
     #endregion

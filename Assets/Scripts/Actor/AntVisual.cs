@@ -6,6 +6,7 @@ public class AntVisual : MonoBehaviour
 {
     [SerializeField]
     private AntBodyPart[] _bodyParts;
+    public AntBodyPart[] BodyParts { get { return _bodyParts; } }
 
     [SerializeField]
     private TeamColorSetting _colorSetting;
@@ -23,9 +24,15 @@ public class AntVisual : MonoBehaviour
     [SerializeField]
     private string _colorSeed = "Queen";
 
+    private float _hurtTime;
+    private float _hurtPercent;
+
+    private float _maxHurtTime;
+
     private void Start()
     {
         EnableArmorLevel(_armorLevel);
+        _animator.SetLayerWeight(1, 0.0f);
     }
 
     public void EnableArmorLevel(bool setCurrent)
@@ -64,6 +71,13 @@ public class AntVisual : MonoBehaviour
         {
             _animator.SetFloat("MovePercent", _movePercent);
             _lastMovePercent = _movePercent;
+        }
+
+        if(_hurtTime > 0.0f)
+        {   
+            _hurtTime -= Time.deltaTime;
+            float t = _hurtTime / _maxHurtTime;
+            _animator.SetLayerWeight(1, _hurtPercent * t);
         }
     }
 
@@ -150,5 +164,12 @@ public class AntVisual : MonoBehaviour
     public void SetMovePercent(float p)
     {
         _movePercent = Mathf.Clamp(p, 0.0f, 1.0f);
+    }
+
+    public void Hurt(float percent, float time)
+    {
+        _hurtTime = time;
+        _maxHurtTime = time;
+        _hurtPercent = Mathf.Max(_hurtPercent, percent);
     }
 }
