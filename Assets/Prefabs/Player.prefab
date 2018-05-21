@@ -3868,7 +3868,6 @@ MonoBehaviour:
   _eatingFloatingText: {fileID: 114271950519660670}
   _camTarget: {fileID: 114611484102958302}
   _playerID: 0
-  _myHealth: {fileID: 114419470004161236}
 --- !u!114 &114892030768481390
 MonoBehaviour:
   m_ObjectHideFlags: 1
