@@ -171,7 +171,8 @@ public class Standard_Weapon_Controller : MonoBehaviour {
             bullet.InitBullet(bulletSpawnPoint.transform.position, aimDirection, teamAssignment.Team);
             bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
         }
-        muzzleFlash.InitMuzzleFlash(0.05f, aimDirection);
+        if (muzzleFlash)
+            muzzleFlash.InitMuzzleFlash(0.05f, aimDirection);
     }
 
 }
