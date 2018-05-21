@@ -58,6 +58,6 @@ public class MuzzleFlashController : MonoBehaviour
         SetAlphaForSpriteRenderer(1f);
         timer = new FloatTimer(duration, false);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle - 90.0f, Vector3.forward);
     }
 }

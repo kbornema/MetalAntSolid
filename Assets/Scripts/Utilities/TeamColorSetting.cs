@@ -13,8 +13,16 @@ public class TeamColorSetting : ScriptableObject
     [SerializeField]
     private Gradient _baseColor;
 
+    [SerializeField]
+    private Gradient _bloodColor;
+
     public Color GetBaseColor(float rand)
     {
         return _baseColor.Evaluate(rand);
+    }
+
+    public Color GetBloodColor(float rand)
+    {
+        return _bloodColor.Evaluate(rand);
     }
 }
