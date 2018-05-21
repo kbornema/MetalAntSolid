@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 114611484102958302}
   - component: {fileID: 114172735032519178}
   - component: {fileID: 114575775775624310}
+  - component: {fileID: 114119654705040890}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2527,7 +2528,7 @@ MonoBehaviour:
   antWeapon: {fileID: 1233180445803628}
 --- !u!114 &114119654705040890
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156043380280036}

@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GUI_ButtonController : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject _creditAnts;
+    [SerializeField]
+    private Trash _trash;
+    [SerializeField]
+    private string _nextScene;
     public enum GUIMenuTyp
     {
         Game,
         Credits
     }
-
-    [SerializeField]
-    private Trash _trash;
     [SerializeField]
     private GUIMenuTyp _typ;
 
@@ -30,11 +33,12 @@ public class GUI_ButtonController : MonoBehaviour {
         switch (_typ)
         {
             case GUIMenuTyp.Game:
-                _fade.OnClicked(false, "MainGame");
+                _fade.OnClicked(false, _nextScene);
               
                 break;
             case GUIMenuTyp.Credits:
-
+                Instantiate(_creditAnts);
+                _trash.Reset();
                 break;
             default:
                 break;
