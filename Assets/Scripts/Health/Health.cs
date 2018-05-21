@@ -70,7 +70,7 @@ public class Health : MonoBehaviour
     {
         if (this.GetComponent<Hero_Movement>() != null)
         {
-            // Todo fix this;
+
             int playerID = this.GetComponent<Actor>().PlayerID;
             Debug.Log("Player " + playerID + " died... Respawning!");
             MatchManager.Instance().StartCoroutine(MatchManager.Instance().DelayedPlayerRespawn(gameObject));
