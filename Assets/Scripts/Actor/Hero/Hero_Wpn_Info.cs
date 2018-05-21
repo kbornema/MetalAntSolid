@@ -26,11 +26,15 @@ public class Hero_Wpn_Info : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
+        SetObjectPoolManager();
+	}
+	
+    public void SetObjectPoolManager()
+    {
         ObjectPoolManager objectPoolManager = MatchManager.Instance().PoolManager;
 
-        additionalDamage = 0;
-
-        switch (weaponType){
+        switch (weaponType)
+        {
             case WeaponType.MachineGun:
                 bulletPool = objectPoolManager.normalBulletPool.GetComponent<ObjectPool>();
                 break;
@@ -42,8 +46,8 @@ public class Hero_Wpn_Info : MonoBehaviour {
                 break;
             default: Debug.Log("no weapon type assigned"); break;
         }
-	}
-	
+    }
+
 	// Update is called once per frame
 	void Update () {
 		

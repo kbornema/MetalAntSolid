@@ -21,12 +21,25 @@ public class AntVisual : MonoBehaviour
     [SerializeField]
     private int _armorLevel = 0;
 
+    [SerializeField]
+    private string _colorSeed = "Queen";
+
+    private float _hurtTime;
+    private float _hurtPercent;
+
+    private float _maxHurtTime;
+
     private void Start()
     {
         EnableArmorLevel(_armorLevel);
     }
 
-    public void EnableArmorLevel(int level)
+    public void EnableArmorLevel(bool setCurrent)
+    {
+        EnableArmorLevel(_armorLevel, false);
+    }
+
+    public void EnableArmorLevel(int level, bool setCurrent = true)
     {
         for (int i = 0; i < _bodyParts.Length; i++)
         {
@@ -36,7 +49,8 @@ public class AntVisual : MonoBehaviour
                 _bodyParts[i].gameObject.SetActive(false);
         }
 
-        _armorLevel = level;
+        if(setCurrent)
+            _armorLevel = level;
     }
 
 
@@ -56,6 +70,13 @@ public class AntVisual : MonoBehaviour
         {
             _animator.SetFloat("MovePercent", _movePercent);
             _lastMovePercent = _movePercent;
+        }
+
+        if(_hurtTime > 0.0f)
+        {   
+            _hurtTime -= Time.deltaTime;
+            float t = _hurtTime / _maxHurtTime;
+            _animator.SetLayerWeight(1, _hurtPercent * t);
         }
     }
 
@@ -96,6 +117,8 @@ public class AntVisual : MonoBehaviour
         if (!_colorSetting)
             return;
 
+        System.Random random = new System.Random(_colorSeed.GetHashCode());
+
         Dictionary<string, float> _randValues = new Dictionary<string, float>();
 
         foreach (var p in _bodyParts)
@@ -108,7 +131,7 @@ public class AntVisual : MonoBehaviour
                 rand = _randValues[key];
             else
             {
-                rand = Random.value;
+                rand = (float)random.NextDouble();
                 _randValues.Add(key, rand);
             }
 
@@ -131,7 +154,7 @@ public class AntVisual : MonoBehaviour
 #if UNITY_EDITOR
     public void FindBodyTypes()
     {
-        _bodyParts = gameObject.GetComponentsInChildren<AntBodyPart>();
+        _bodyParts = gameObject.GetComponentsInChildren<AntBodyPart>(true);
 
         UnityEditor.EditorUtility.SetDirty(gameObject);
     }
@@ -140,5 +163,12 @@ public class AntVisual : MonoBehaviour
     public void SetMovePercent(float p)
     {
         _movePercent = Mathf.Clamp(p, 0.0f, 1.0f);
+    }
+
+    public void Hurt(float percent, float time)
+    {
+        _hurtTime = time;
+        _maxHurtTime = time;
+        _hurtPercent = Mathf.Max(_hurtPercent, percent);
     }
 }

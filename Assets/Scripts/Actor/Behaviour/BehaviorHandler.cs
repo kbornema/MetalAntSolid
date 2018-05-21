@@ -10,6 +10,9 @@ public class BehaviorHandler : MonoBehaviour {
     [SerializeField]
     SteeringAntBehavior[] steeringAntBehaviors;
     [SerializeField]
+    GoToBehavior goToBehavior;
+
+    [SerializeField]
     int currentBehavior = 0;
     
     Rigidbody2D rb2d;
@@ -40,6 +43,13 @@ public class BehaviorHandler : MonoBehaviour {
     // Use this for initialization
     void Start () {
         steeringAntBehaviors = BehaviorContainer.GetComponentsInChildren<SteeringAntBehavior>();
+        foreach(SteeringAntBehavior behavior in steeringAntBehaviors)
+        {
+            goToBehavior = behavior.GetComponent<GoToBehavior>();
+            if (goToBehavior != null)
+                break;
+        }
+
         rb2d = GetComponent<Rigidbody2D>();
         antVisual = GetComponentInChildren<AntVisual>();
     }
@@ -48,22 +58,29 @@ public class BehaviorHandler : MonoBehaviour {
 	void Update () {
         WalkingBehavior wb = null;
 
-        while(currentBehavior < steeringAntBehaviors.Length)
+        if (goToBehavior != null && goToBehavior.isActiveAndEnabled && goToBehavior.GetTarget() != null)
         {
-            if (!steeringAntBehaviors[currentBehavior].isActiveAndEnabled)
+            wb = goToBehavior.GetWalkingBehavior();
+        } else
+        {
+            while (currentBehavior < steeringAntBehaviors.Length)
             {
-                currentBehavior++;
-                if (currentBehavior >= steeringAntBehaviors.Length)
+                if (!steeringAntBehaviors[currentBehavior].isActiveAndEnabled)
+                {
+                    currentBehavior++;
+                    if (currentBehavior >= steeringAntBehaviors.Length)
+                        break;
+                    steeringAntBehaviors[currentBehavior].Init();
+                    Debug.Log("Switch Behavior");
+                }
+                else
+                {
+                    wb = steeringAntBehaviors[currentBehavior].GetWalkingBehavior();
                     break;
-                steeringAntBehaviors[currentBehavior].Init();
-                Debug.Log("Switch Behavior");
-            }
-            else
-            {
-                wb = steeringAntBehaviors[currentBehavior].GetWalkingBehavior();
-                break;
+                }
             }
         }
+        
 
 
         if (wb == null)
