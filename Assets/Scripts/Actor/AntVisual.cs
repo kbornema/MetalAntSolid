@@ -31,6 +31,7 @@ public class AntVisual : MonoBehaviour
     private void Start()
     {
         EnableArmorLevel(_armorLevel);
+        _animator.SetLayerWeight(1, 0.0f);
     }
 
     public void EnableArmorLevel(bool setCurrent)
