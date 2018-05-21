@@ -7195,6 +7195,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}
@@ -7322,6 +7323,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13
@@ -7747,6 +7749,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}
@@ -7825,6 +7828,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13
@@ -8502,6 +8506,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13
@@ -8540,6 +8545,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}
@@ -8978,6 +8984,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   antVisual: {fileID: 0}
   Weapon: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   targetDirection: {x: 0, y: 0}
   aimDirection: {x: 0, y: 0}
   rangedAttackBehavior: {fileID: 0}
@@ -9617,6 +9624,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13
