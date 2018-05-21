@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4152248459132946}
   - component: {fileID: 114177789686068932}
+  - component: {fileID: 58949791482544898}
   - component: {fileID: 58163553639904216}
   m_Layer: 0
   m_Name: SpawnBuilding
@@ -68,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4603418823635994}
   - component: {fileID: 114532586576310286}
+  - component: {fileID: 58447947477883332}
   m_Layer: 0
   m_Name: Bhvr
   m_TagString: Untagged
@@ -145,6 +147,36 @@ CircleCollider2D:
   m_Offset: {x: 0.55, y: -0.55}
   serializedVersion: 2
   m_Radius: 2.31
+--- !u!58 &58447947477883332
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516352139885882}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.55, y: -0.55}
+  serializedVersion: 2
+  m_Radius: 2.6
+--- !u!58 &58949791482544898
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427547391514306}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.55, y: -0.55}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &114177789686068932
 MonoBehaviour:
   m_ObjectHideFlags: 1
