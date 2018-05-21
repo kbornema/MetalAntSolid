@@ -2070,6 +2070,7 @@ MonoBehaviour:
   hp: 5
   maxHP: 5
   invincible: 0
+  _antVisual: {fileID: 0}
 --- !u!114 &114261582803445116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2516,6 +2517,7 @@ MonoBehaviour:
   bulletPool: {fileID: 0}
   fireSpeed: 0.1
   additionalDamage: 0
+  numberOfBulletsPerShot: 0
   rotationSpeed: 360
   aimRange: 20
   heatGenerationPerShot: 0.13
