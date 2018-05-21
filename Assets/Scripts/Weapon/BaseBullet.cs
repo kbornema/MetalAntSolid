@@ -31,6 +31,8 @@ public class BaseBullet : PooledObject
     private Rigidbody2D _body2D;
     [SerializeField]
     private float _forwardForce;
+    [SerializeField]
+    private float knockBackForce;
 
     [SerializeField]
     private int damage;
@@ -70,9 +72,17 @@ public class BaseBullet : PooledObject
             if (collision.GetComponent<TeamAssignment>().Team != team)
             {
                 collision.GetComponent<Health>().Damage(damage);
+                Vector2 knockBack = Direction.normalized * knockBackForce;
+                Debug.Log("Knocking ant back with: " + knockBack);
+                collision.GetComponent<Rigidbody2D>().position += knockBack;
                 ReturnToPool();
             }
         }
+    }
+
+    public void AddAdditonalDamage(int additionalDamage)
+    {
+        damage += additionalDamage;
     }
 }
 

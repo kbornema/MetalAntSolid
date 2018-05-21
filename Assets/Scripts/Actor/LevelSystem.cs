@@ -42,17 +42,21 @@ public class LevelSystem : MonoBehaviour {
     public List<Hero_Wpn_Controller> weaponList;
 
     SpawnFollower antSpawner;
+    AntVisual antVisual;
+    AntUpgrader antUpgrader;
 
     void InitPowerUps()
     {
         ObjectPoolManager objectPoolManager = MatchManager.Instance().PoolManager;
         antSpawner = this.transform.parent.GetComponent<SpawnFollower>();
+        antVisual = this.transform.parent.GetComponentInChildren<AntVisual>();
+        antUpgrader = this.transform.parent.GetComponent<AntUpgrader>();
     }
 
     void SpawnAnt()
     {
         Debug.Log("Spawning Ant");
-        antSpawner.SpawnAnt();
+        antSpawner.SpawnAntGroup();
     }
 
     void SpawnTower()
@@ -67,6 +71,7 @@ public class LevelSystem : MonoBehaviour {
     void UpgradeAnts()
     {
         Debug.Log("Upgrading Ant");
+        antUpgrader.UpgradeHero();
 
     }
 

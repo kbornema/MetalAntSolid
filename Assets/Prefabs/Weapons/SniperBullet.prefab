@@ -93,6 +93,7 @@ MonoBehaviour:
   _dir: {x: 0, y: 0}
   _body2D: {fileID: 50224144784323532}
   _forwardForce: 40
+  knockBackForce: 0.5
   damage: 4
   _lifeTime:
     _timer: 1

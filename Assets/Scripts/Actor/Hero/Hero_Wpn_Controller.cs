@@ -108,8 +108,9 @@ public class Hero_Wpn_Controller : MonoBehaviour {
 
         Vector2 currentAimDirection = Quaternion.AngleAxis(Random.Range(-currentSpray, currentSpray), Vector3.forward) * aimDirection;
         bullet.InitBullet(bulletSpawnPoint.transform.position, currentAimDirection, team.Team);
+        bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
 
-        
+
         currentHeat += wpnInfo.heatGenerationPerShot;
         if(currentHeat > wpnInfo.heatLimit)
         {

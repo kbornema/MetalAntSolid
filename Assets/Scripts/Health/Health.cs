@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
 
     [SerializeField]
     private float hp;
@@ -26,7 +27,7 @@ public class Health : MonoBehaviour {
 #if UNITY_EDITOR
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             invincible = !invincible;
             Debug.Log("Switching to Godmode");
@@ -56,13 +57,11 @@ public class Health : MonoBehaviour {
 
     public void Damage(int damage)
     {
-        if(invincible == false)
+        if (invincible == false)
             HP -= damage;
 
         if (heroMovement != null && damage > 0)
-        { 
-
-            Debug.Log("Vibrating");
+        {
             heroMovement.playerInput.SetVibration(0, ((float)damage / (float)5), 0.25f, true);
         }
     }
@@ -79,9 +78,32 @@ public class Health : MonoBehaviour {
         else if (gameObject.tag == "Ants")
         {
             PooledObject pooledObject = gameObject.GetComponent<PooledObject>();
+            FollowPlayerBehavior followPlayerBehavior = this.GetComponent<FollowPlayerBehavior>();
+            if (followPlayerBehavior != null)
+            {
+                followPlayerBehavior.followTarget.GetComponent<SpawnFollower>().RemoveFollower(followPlayerBehavior.gameObject);
+            }
+            GetComponent<AntUpgrader>().StopAllCoroutines();
             pooledObject.ReturnToPool();
         }
     }
 
+    public void PermanentHealthBuff(float additionalHealth)
+    {
+        maxHP += additionalHealth;
+        HP += additionalHealth;
+    }
+
+    public void AddTimedHealthBuff(float additionalHealth, float time)
+    {
+        maxHP += additionalHealth;
+        HP += additionalHealth;
+    }
+
+    public void RemoveTimedHealthBuff(float additionalHealth)
+    {
+        maxHP -= additionalHealth;
+        HP -= Mathf.Min(HP - 1, additionalHealth);
+    }
 
 }

@@ -38,6 +38,12 @@ public class AntVisual : MonoBehaviour
         _armorLevel = level;
     }
 
+
+    public void IncreaseArmorLevel()
+    {
+        EnableArmorLevel(_armorLevel + 1);
+    }
+
     private void OnValidate()
     {
         Colorize();
