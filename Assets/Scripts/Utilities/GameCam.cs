@@ -60,7 +60,7 @@ public class GameCam : MonoBehaviour
                
 
                 Vector2 tmpPos = _targets[i].transform.position;
-                targetPos += tmpPos * weight;
+                targetPos += tmpPos;
                 num++;
             }
         }
@@ -68,14 +68,14 @@ public class GameCam : MonoBehaviour
         if (num <= 0)
             return;
 
-        Vector2 finalTargetPos = targetPos / (num * totalWeight);
+        Vector2 finalTargetPos = targetPos / num;
 
         if (Vector2.Distance(transform.position, finalTargetPos) > _treshold)
         {
             Vector2 myPos = transform.position;
             Vector3 dir = finalTargetPos - myPos;
             dir.Normalize();
-
+            Debug.DrawLine(transform.position, finalTargetPos);
             transform.position += dir * Time.deltaTime * _moveSpeed;
         }
 

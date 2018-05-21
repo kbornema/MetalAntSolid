@@ -2037,7 +2037,7 @@ MonoBehaviour:
   steeringAntBehaviors: []
   goToBehavior: {fileID: 0}
   currentBehavior: 0
-  speed: 2
+  speed: 5
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &114221887398606504
 MonoBehaviour:
