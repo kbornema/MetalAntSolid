@@ -27,6 +27,13 @@ namespace Bldg
         [SerializeField]
         private GameObject spawnPosition;
 
+        [SerializeField]
+        private GameObject orbitCenter;
+
+        void Start()
+        {
+            orbitCenter = transform.parent.gameObject;
+        }
 
         public override void Init(Bldg_Building controller)
         {
@@ -59,8 +66,9 @@ namespace Bldg
             {
 
                 PooledObject ant = MatchManager.Instance().PoolManager.GetObjFromPool(ObjectPoolManager.PoolTyp.OrbitingAnt).GetComponent<AntPool>().GetObject();
-                OrbitingAnt orbAnt = ant.GetComponentInChildren<OrbitingAnt>();
-                orbAnt.HomeZone = spawnPosition;
+                OrbitingAnt orbAnt = ant.GetComponentInChildren<OrbitingAnt>(true);
+                orbAnt.gameObject.SetActive(true);
+                orbAnt.HomeZone = orbitCenter;
 
                 _ants.Add(orbAnt);
 
