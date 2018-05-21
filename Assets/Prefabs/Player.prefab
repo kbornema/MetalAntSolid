@@ -3545,7 +3545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eatingFloating: {fileID: 114271950519660670}
   _eatingBhvr: {fileID: 114128184943744040}
-  _levelUpExp: 300
+  _levelUpExp: 500
   towerList:
   - {fileID: 1092064236823136, guid: da21101057b66bf489acc2d6eacf7608, type: 2}
   - {fileID: 1246236599771840, guid: 91a42ab3e3b675c4b8ef599a8d23ac7c, type: 2}
