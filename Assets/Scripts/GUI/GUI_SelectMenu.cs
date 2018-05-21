@@ -41,7 +41,7 @@ namespace GUI
                 if (del.Count <= i)
                     _selectList[i].FadeOut();
                 else
-                    _selectList[i].InitSelectIcon(null, del[i]);
+                    _selectList[i].InitSelectIcon(del[i]);
             }
 
             enabled = true;

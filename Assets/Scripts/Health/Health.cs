@@ -22,6 +22,11 @@ public class Health : MonoBehaviour
         healthbar = GetComponentInChildren<HealthBar>();
         heroMovement = GetComponent<Hero_Movement>();
         invincible = false;
+
+        if(heroMovement != null)
+        {
+            this.GetComponentInChildren<EatingBhvr>().AddOnEatingEventListener(GetHpFromFood);
+        }
     }
 
 #if UNITY_EDITOR
@@ -48,6 +53,11 @@ public class Health : MonoBehaviour
 
             if (hp < 0) Die();
         }
+    }
+
+    public void GetHpFromFood(int value)
+    {
+        HP = Mathf.Min(hp + 1, maxHP);
     }
 
     public void ResetHP()

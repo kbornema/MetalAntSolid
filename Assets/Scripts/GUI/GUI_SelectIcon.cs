@@ -15,10 +15,9 @@ namespace GUI
 
         private Action _del;
 
-        public void InitSelectIcon(Sprite sprite, Action del)
+        public void InitSelectIcon(Action del)
         {
             _del = del;
-            _iconImage.sprite = sprite;
 
         }
 

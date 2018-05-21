@@ -21,6 +21,8 @@ public class Hero_Wpn_Controller : MonoBehaviour {
     public GameObject Weapon;
     [HideInInspector]
     public BulletSpawnPoint bulletSpawnPoint;
+    [HideInInspector]
+    public MuzzleFlashController muzzleFlash;
 
     public Vector2 targetDirection;
     public Vector2 aimDirection;
@@ -31,6 +33,8 @@ public class Hero_Wpn_Controller : MonoBehaviour {
     public float currentHeatCooldown;
     public float currentSpray;
     TeamAssignment team;
+
+    
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +51,7 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         GameObject antVisual = this.transform.parent.GetComponentInChildren<AntVisual>().gameObject;
         bulletSpawnPoint = antVisual.GetComponentInChildren<BulletSpawnPoint>();
         Weapon = bulletSpawnPoint.transform.parent.gameObject;
+        muzzleFlash = Weapon.GetComponentInChildren<MuzzleFlashController>();
 
         wpnInfo = _wpnInfo;
         currentCoolDown = _wpnInfo.fireSpeed;
@@ -109,6 +114,7 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         Vector2 currentAimDirection = Quaternion.AngleAxis(Random.Range(-currentSpray, currentSpray), Vector3.forward) * aimDirection;
         bullet.InitBullet(bulletSpawnPoint.transform.position, currentAimDirection, team.Team);
         bullet.AddAdditonalDamage(wpnInfo.additionalDamage);
+        
 
 
         currentHeat += wpnInfo.heatGenerationPerShot;
@@ -121,6 +127,7 @@ public class Hero_Wpn_Controller : MonoBehaviour {
         currentSpray += wpnInfo.sprayIncreasePerShot;
         currentSpray = Mathf.Clamp(currentSpray, wpnInfo.minSprayAngle, wpnInfo.maxSprayAngle);
 
+        muzzleFlash.InitMuzzleFlash(0.05f, currentAimDirection);
         healthBar.ResetHealthBarFadeOut();
     }
 
