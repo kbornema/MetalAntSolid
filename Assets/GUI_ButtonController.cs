@@ -39,10 +39,12 @@ public class GUI_ButtonController : MonoBehaviour {
             case GUIMenuTyp.Credits:
                 Instantiate(_creditAnts);
                 _trash.Reset();
+                MatchManager.Instance().StartCoroutine(MatchManager.Instance().WaitFunction(15, this.gameObject));
                 break;
             default:
                 break;
         }
 
     }
+
 }

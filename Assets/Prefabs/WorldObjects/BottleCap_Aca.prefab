@@ -177,8 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _capacity: 200
-  _eatingSteps: 20
+  _eatingSteps: 40
   _isShaking: 1
+  _dontDestroy: 0
   _shakeAmount: 0.15
 --- !u!210 &210651981670672188
 SortingGroup:

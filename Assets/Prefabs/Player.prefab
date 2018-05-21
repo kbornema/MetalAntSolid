@@ -3113,7 +3113,12 @@ MonoBehaviour:
   hp: 10
   maxHP: 10
   invincible: 0
-  _antVisual: {fileID: 0}
+  _hurtSounds:
+  - {fileID: 114902912281517444, guid: d74c17adc18186d4d906482856b7e000, type: 2}
+  - {fileID: 114902912281517444, guid: 616edab3cc3c0c44291a2693a60c6293, type: 2}
+  - {fileID: 114902912281517444, guid: 138162a0c61da3d4aa9931807f11b3e3, type: 2}
+  - {fileID: 114902912281517444, guid: 138162a0c61da3d4aa9931807f11b3e3, type: 2}
+  _chanceSound: 0.25
 --- !u!114 &114419477599163502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3495,7 +3500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eatingFloating: {fileID: 114271950519660670}
   _eatingBhvr: {fileID: 114128184943744040}
-  _levelUpExp: 300
+  _levelUpExp: 500
   towerList:
   - {fileID: 1092064236823136, guid: da21101057b66bf489acc2d6eacf7608, type: 2}
   - {fileID: 1246236599771840, guid: 91a42ab3e3b675c4b8ef599a8d23ac7c, type: 2}
@@ -3864,7 +3869,7 @@ MonoBehaviour:
   _eatingFloatingText: {fileID: 114271950519660670}
   _camTarget: {fileID: 114611484102958302}
   _playerID: 0
-  _myHealth: {fileID: 114419470004161236}
+  _myHealth: {fileID: 0}
 --- !u!114 &114892030768481390
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -18,10 +18,15 @@ public class Health : MonoBehaviour
 
     Hero_Movement heroMovement;
 
-    [SerializeField]
+
     private AntVisual _antVisual;
 
     private BloodSpawner _bloodSpawner;
+
+    [SerializeField]
+    private List<MyAudio> _hurtSounds;
+    [SerializeField, Range(0.0f, 1.0f)]
+    private float _chanceSound = 0.25f;
 
     void Start()
     {
@@ -87,6 +92,11 @@ public class Health : MonoBehaviour
 
         if (_bloodSpawner)
             _bloodSpawner.SpawnBlood();
+
+        if(_hurtSounds.Count > 0 && Random.value < _chanceSound)
+        {
+            MyAudio.Create(_hurtSounds[Random.Range(0, _hurtSounds.Count)], transform.position);
+        }
 
         if (heroMovement != null && damage > 0)
         {
