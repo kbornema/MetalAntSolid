@@ -115,6 +115,7 @@ public class Health : MonoBehaviour
             }
             GetComponent<AntUpgrader>().StopAllCoroutines();
             pooledObject.ReturnToPool();
+            GameManager.Instance().AddKillValue();
         }
     }
 

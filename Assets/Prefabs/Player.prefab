@@ -2620,7 +2620,7 @@ MonoBehaviour:
   antWeapon: {fileID: 1233180445803628}
 --- !u!114 &114119654705040890
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156043380280036}

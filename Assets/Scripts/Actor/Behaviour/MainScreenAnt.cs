@@ -50,6 +50,11 @@ public class MainScreenAnt : MonoBehaviour {
 	void Update () {
 		if (path != null)
         {
+            if(currentTarget == path.Length)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             GameObject go = path[currentTarget];
             Vector3 direction = go.transform.position - transform.position;
 
@@ -64,7 +69,7 @@ public class MainScreenAnt : MonoBehaviour {
             rb2d.velocity = Direction * speed;
 
             if (direction.magnitude < 1)
-                currentTarget = (currentTarget + 1) % path.Length;
+                currentTarget = (currentTarget + 1);// % path.Length;
         }
 	}
 }

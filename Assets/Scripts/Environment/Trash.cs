@@ -13,6 +13,8 @@ public class Trash : MonoBehaviour {
     private int _eatingSteps;
     [SerializeField]
     private bool _isShaking = true;
+    [SerializeField]
+    private bool _dontDestroy = false;
 
     #region Events
     [HideInInspector]
@@ -29,7 +31,10 @@ public class Trash : MonoBehaviour {
         _eventInstance.AddListener(listener);
     }
     #endregion
-
+    public void Reset()
+    {
+        _capacity = 100;
+    }
     public int EatingTrash()
     {
         _shakeDuration = SHAKEDURATION;
@@ -61,7 +66,8 @@ public class Trash : MonoBehaviour {
         if (_capacity == 0)
         {
             InvokeTrashFinishedEvent();
-            Destroy(this.gameObject);
+            if(!_dontDestroy)
+                Destroy(this.gameObject);
         }
 
 
