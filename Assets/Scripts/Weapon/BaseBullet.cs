@@ -78,6 +78,10 @@ public class BaseBullet : PooledObject
                 ReturnToPool();
             }
         }
+        else if (collision.tag == "Environment")
+        {
+            ReturnToPool();
+        }
     }
 
     public void AddAdditonalDamage(int additionalDamage)
