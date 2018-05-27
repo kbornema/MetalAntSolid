@@ -45,12 +45,12 @@ public class OrbitingAnt : SteeringAntBehavior {
         if (collision.tag == "Player")
         {
             this.gameObject.SetActive(false);
-            Debug.Log("deactive Orbit");
+            //Debug.Log("deactive Orbit");
         }
         if (collision.tag == "Ants" && collision.GetComponent<TeamAssignment>().Team != GetComponentInParent<TeamAssignment>().Team)
         {
             this.gameObject.SetActive(false);
-            Debug.Log("deactive Orbit");
+            //Debug.Log("deactive Orbit");
         }
     }
 }

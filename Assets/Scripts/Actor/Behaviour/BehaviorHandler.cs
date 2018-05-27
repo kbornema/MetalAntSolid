@@ -68,10 +68,12 @@ public class BehaviorHandler : MonoBehaviour {
                 if (steeringAntBehaviors[currentBehavior].isActiveAndEnabled == false)
                 {
                     currentBehavior++;
+
                     if (currentBehavior >= steeringAntBehaviors.Length)
                         break;
+
                     steeringAntBehaviors[currentBehavior].Init();
-                    Debug.Log("Switch Behavior to " + steeringAntBehaviors[currentBehavior].gameObject.name);
+                    //Debug.Log("Switch Behavior to " + steeringAntBehaviors[currentBehavior].gameObject.name);
                 }
                 else
                 {
