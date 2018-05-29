@@ -43,7 +43,7 @@ public class GoToBehavior : SteeringAntBehavior {
 
     public GameObject GetTarget()
     {
-        if (walkingTarget != null)
+        if (walkingTarget != null && walkingTarget.isActiveAndEnabled)
             return walkingTarget.gameObject;
         return null;
     }

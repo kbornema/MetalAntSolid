@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float maxHP;
 
-
-
     public bool invincible;
 
     HealthBar healthbar = null;
@@ -121,6 +119,7 @@ public class Health : MonoBehaviour
             FollowPlayerBehavior followPlayerBehavior = this.GetComponent<FollowPlayerBehavior>();
             if (followPlayerBehavior != null)
             {
+                Debug.Log("Trying to remove follower from antlist");
                 followPlayerBehavior.followTarget.GetComponent<SpawnFollower>().RemoveFollower(followPlayerBehavior.gameObject);
             }
             GetComponent<AntUpgrader>().StopAllCoroutines();

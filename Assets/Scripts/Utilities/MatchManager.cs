@@ -164,28 +164,47 @@ public class MatchManager : MonoBehaviour  {
 
     public IEnumerator DelayedPlayerRespawn(GameObject player)
     {
-        int playerID = player.GetComponent<Actor>().PlayerID;
-        ResetPlayer(player);
-        player.SetActive(false);
-        player.GetComponent<CamTarget>().ValidTarget = false;
+        if(_players.Count < 2) // Singleplayer
+        {
+            int playerID = player.GetComponent<Actor>().PlayerID;
+            ResetPlayer(player);
+            player.SetActive(false);
 
-        if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
-            GameOver();
+            yield return new WaitForSeconds(1.5f);
 
-        yield return new WaitForSeconds(3);
+            Debug.Log("Respawning Player " + playerID);
+            player.SetActive(true);
+            player.GetComponent<CamTarget>().ValidTarget = true;
+        }
+        else
+        {
+            int playerID = player.GetComponent<Actor>().PlayerID;
+            ResetPlayer(player);
+            player.SetActive(false);
+            player.GetComponent<CamTarget>().ValidTarget = false;
 
-        if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
-            GameOver();
+            if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
+                GameOver();
 
-        Debug.Log("Respawning Player " + playerID);
-        player.SetActive(true);
-        player.GetComponent<CamTarget>().ValidTarget = true;
+            yield return new WaitForSeconds(3);
+
+            if (!GetOtherPlayer(playerID).gameObject.activeInHierarchy)
+                GameOver();
+
+            Debug.Log("Respawning Player " + playerID);
+            player.SetActive(true);
+            player.GetComponent<CamTarget>().ValidTarget = true;
+        }
     }
 
     public void ResetPlayer(GameObject player)
     {
         // Reset Player Position
-        player.transform.position = GetOtherPlayer(player.GetComponent<Actor>().PlayerID).transform.position;
+        if (_players.Count < 2) // singleplayer
+            player.transform.position = Vector3.zero;
+        else
+            player.transform.position = GetOtherPlayer(player.GetComponent<Actor>().PlayerID).transform.position;
+
         player.transform.rotation = Quaternion.identity;
 
         // Reset PlayerScripts
