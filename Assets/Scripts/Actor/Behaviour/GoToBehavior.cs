@@ -17,6 +17,7 @@ public class GoToBehavior : SteeringAntBehavior {
         if (direction.magnitude > targetDistance)
         {
             // hallo ich habe einen name
+            // hallo
             return new WalkingBehavior(direction, 1.0f);
         }
         else
