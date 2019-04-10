@@ -16,6 +16,7 @@ public class GoToBehavior : SteeringAntBehavior {
         Vector3 direction = walkingTarget.transform.position - this.transform.position;
         if (direction.magnitude > targetDistance)
         {
+            // hallo ich habe einen name
             return new WalkingBehavior(direction, 1.0f);
         }
         else
